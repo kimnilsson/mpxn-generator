@@ -1,3 +1,32 @@
 <html>
+  <script>
+    // taken from here https://en.wikipedia.org/wiki/Meter_Point_Administration_Number
+    function checkMPAN(mpan) {
+      var primes = [3, 5, 7, 13, 17, 19, 23, 29, 31, 37, 41, 43];
+      var sum = 0;
+      var m = mpan.toString();
+
+      if (m.length - 1 === primes.length) {
+          for (var i = 0; i < primes.length; i++) {
+              sum += parseInt(m.charAt(i)) * primes[i];
+          }
+          return sum % 11 % 10 === parseInt(m.charAt(12));
+      }
+
+      return false;
+    }
+    
+    function genCandidate() {
+        return Math.random() * (9999999999999 - 1000000000000) + 1000000000000;
+    }
+    
+    for (let i = 0; i < 100; i++) {
+        var c = genCandidate()
+        if (checkMPAN(c) {
+          document.body.innerHTML = document.body.innerHTML + "<div>" + c + "</div>";
+        }
+    } 
+    
+  </script>
   <body>test</body>
 </html>
