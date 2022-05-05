@@ -16,22 +16,33 @@
       return false;
     }
     
-  function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
+    function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
     
     window.addEventListener('load', (event) => {
-    for (let i = 0; i < 200; i++) {
-        var c = randomInteger(1000000000000, 9999999999999)
+        for (let i = 0; i < 100;) {
+            var c = randomInteger(1000000000000, 9999999999999)
   
-        if (checkMPAN(c)) {    	
-              console.log(c)
-          document.getElementById("mpxns").innerHTML+= "<p>"+c+"</p>"
-        }
+            if (checkMPAN(c)) {  
+               i++;
+               console.log(c + ",");
+               document.getElementById("mpxns").innerHTML+= "<p>"+c+"</p>"
+            }
     } 
 	});
+   </script> 
+	
+    <style>
+	body {
+	  background-color: linen;
+	}
 
+	h2, p { text-align: center }
+    </style>
     
-  </script>
-  <body><div id="mpxns"></div></body>
+    <body>
+	    <h2>Generated MPXNs</h2>
+	    <div id="mpxns"></div>
+    </body>
 </html>
