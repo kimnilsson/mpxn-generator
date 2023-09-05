@@ -33,7 +33,8 @@
     });
 	  
     function clickHandler(e) {
-        console.log(e.target);
+        const text = e.target.innerHTML
+	navigator.clipboard.writeText(text);
     }
 	  
    </script> 
