@@ -29,8 +29,13 @@
                console.log(c + ",");
                document.getElementById("mpxns").innerHTML+= "<p>"+c+"</p>"
             }
-    } 
-	});
+        } 
+    });
+	  
+    function clickHandler(e) {
+        console.log(e.target);
+    }
+	  
    </script> 
 	
     <style>
@@ -43,6 +48,6 @@
     
     <body>
 	    <h2>Generated MPXNs</h2>
-	    <div id="mpxns"></div>
+	    <div id="mpxns" onclick="clickHandler(event)"></div>
     </body>
 </html>
